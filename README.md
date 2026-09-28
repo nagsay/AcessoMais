@@ -1,26 +1,33 @@
 # Acesso+
 
-O **Acesso+** é um hub de oportunidades criado para reunir, organizar e facilitar a descoberta de cursos, vagas, estágios, bolsas, eventos e editais.
+Acesso+ é uma plataforma de descoberta de oportunidades voltada para estudantes e jovens profissionais. O projeto centraliza vagas, cursos, bolsas, estágios, eventos e editais em uma interface moderna, intuitiva e responsiva.
 
-A proposta do projeto é reduzir a dispersão de informações e oferecer uma experiência simples, responsiva e acessível para estudantes e jovens profissionais.
+A ideia principal é reduzir a dispersão de informações e facilitar a busca por oportunidades relevantes em um único lugar.
 
-## Principais recursos
+## Visão geral
 
-- busca por título, instituição, categoria e habilidades;
-- filtro real por localização;
-- filtros rápidos para oportunidades gratuitas, online/remotas e salvas;
-- ordenação por relevância, novidades e prazo;
-- favoritos persistidos com `localStorage`;
-- cards com habilidades, modalidade, prazo e organização;
-- modal com requisitos, público-alvo e detalhes da oportunidade;
-- radar de oportunidades em destaque;
-- seções de benefícios, público-alvo, funcionamento e FAQ;
+O portal oferece:
+
+- busca por título, organização, categoria e habilidades;
+- filtros por localização, modalidade, gratuidade e oportunidades salvas;
+- ordenação por relevância, novidade e prazo;
+- cards com informações principais de cada oportunidade;
+- modal com detalhes completos, requisitos e público-alvo;
+- seção de destaques para oportunidades em evidência;
 - layout responsivo para desktop, tablet e celular;
-- animações sutis com suporte a `prefers-reduced-motion`;
-- componentes de interface baseados em shadcn;
-- estrutura preparada para futura integração com Cloudflare D1 e Drizzle ORM.
+- foco em acessibilidade e experiência do usuário.
 
-## Tecnologias
+## Funcionalidades principais
+
+- Busca inteligente com texto livre;
+- Filtros rápidos e refinados;
+- Persistência de favoritos no navegador;
+- Visualização de oportunidades por categoria;
+- Destaques em cards exclusivos;
+- Estrutura preparada para integração com banco de dados e APIs futuras;
+- Interface moderna com componentes reutilizáveis e visual consistente.
+
+## Tecnologias utilizadas
 
 - React 19
 - TypeScript
@@ -32,7 +39,7 @@ A proposta do projeto é reduzir a dispersão de informações e oferecer uma ex
 - Cloudflare Workers
 - Drizzle ORM
 
-## Estrutura principal
+## Estrutura do projeto
 
 ```text
 app/
@@ -40,39 +47,66 @@ app/
   page.tsx
   globals.css
 
+components/
+  ui/
+
 data/
   opportunities.ts
+
+db/
+  index.ts
+  schema.ts
+
+lib/
+  utils.ts
 
 types/
   opportunity.ts
 
-components/ui/
-  componentes reutilizáveis da interface
-
-db/
-  estrutura preparada para banco de dados
-
 worker/
-  entrada do Cloudflare Worker
+  index.ts
 ```
 
-## Como executar
-
-Requisitos:
+## Pré-requisitos
 
 - Node.js 22.13 ou superior
 - npm
 
-Instale as dependências:
+## Como executar localmente
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/nagsay/AcessoMais.git
+cd AcessoMais
+```
+
+2. Instale as dependências:
 
 ```bash
 npm install
 ```
 
-Inicie o ambiente de desenvolvimento:
+3. Inicie o ambiente de desenvolvimento:
 
 ```bash
 npm run dev
+```
+
+4. Acesse no navegador:
+
+```text
+http://localhost:3000
+```
+
+## Scripts disponíveis
+
+```bash
+npm run dev
+npm run build
+npm run test
+npm run lint
+npm run db:generate
 ```
 
 ## Dados do protótipo
@@ -83,26 +117,32 @@ As oportunidades exibidas nesta versão são demonstrativas e ficam em:
 data/opportunities.ts
 ```
 
-Isso permite substituir os dados locais por uma API ou banco de dados futuramente sem misturar o conteúdo com a estrutura visual principal.
+Essa estrutura permite evoluir para uma integração com API real, banco de dados ou CMS sem mexer na base visual do projeto.
 
-## Persistência dos favoritos
+## Acessibilidade
 
-Os favoritos são salvos no navegador por meio de `localStorage`. Em uma versão futura com autenticação, esse recurso pode ser migrado para o banco de dados e associado à conta de cada usuário.
+O projeto considera boas práticas de acessibilidade, como:
 
-## Acessibilidade e movimento
+- HTML semântico;
+- rótulos claros em campos de busca;
+- estados visuais para filtros ativos;
+- suporte a reduções de movimento (`prefers-reduced-motion`);
+- interface pensada para navegação simples e intuitiva.
 
-O projeto utiliza HTML semântico, rótulos acessíveis, estados `aria-pressed` em filtros e tratamento de redução de movimento. Usuários que configuram `prefers-reduced-motion` no sistema recebem uma interface praticamente sem animações.
+## Roadmap sugerido
 
-## Próximas evoluções sugeridas
-
-- painel administrativo para cadastro de oportunidades;
-- autenticação;
-- banco de dados para oportunidades e favoritos;
+- painel administrativo para cadastro e edição de oportunidades;
+- autenticação de usuários;
+- banco de dados real para armazenar oportunidades e favoritos;
 - links oficiais de inscrição;
-- paginação ou carregamento pela API;
-- notificações de novos prazos;
-- perfis e recomendações personalizadas.
+- paginação e carregamento dinâmico;
+- notificações de novos eventos e prazos;
+- perfis personalizados e recomendações.
+
+## Observação
+
+Este é um projeto acadêmico e demonstrativo, desenvolvido para apresentar uma solução funcional de agregação de oportunidades em uma interface moderna e escalável.
 
 ---
 
-Projeto acadêmico. Conteúdo demonstrativo.
+Acesso+ • Conectando oportunidades ao futuro.
