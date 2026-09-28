@@ -1,0 +1,23 @@
+ACESSO+ — VERSÃO PROFISSIONAL
+
+1. Abra a pasta do projeto no VS Code.
+2. Instale as dependências, caso ainda não estejam instaladas:
+   npm install
+3. Rode o projeto:
+   npm run dev
+4. Teste desktop e celular.
+5. Para enviar as alterações ao GitHub na branch master:
+   git add .
+   git commit -m "feat: aprimora interface, responsividade e animacoes do Acesso+"
+   git push origin master
+
+ARQUIVOS PRINCIPAIS ALTERADOS/CRIADOS
+- app/page.tsx
+- app/globals.css
+- data/opportunities.ts
+- types/opportunity.ts
+- README.md
+- MELHORIAS_V3.md
+
+IMPORTANTE
+As oportunidades continuam sendo conteúdo demonstrativo. Antes de transformar o site em produção, cadastre fontes e links oficiais e integre os dados com uma API ou banco.

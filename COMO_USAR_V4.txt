@@ -1,0 +1,14 @@
+ACESSO+ V4
+
+1. Extraia este ZIP.
+2. Abra a pasta no VS Code.
+3. No terminal, rode:
+
+npm install
+npm run dev
+
+Se for substituir sua versão atual no GitHub, teste primeiro e depois rode:
+
+git add .
+git commit -m "fix: corrige busca, detalhes e identidade visual do Acesso+"
+git push origin master
